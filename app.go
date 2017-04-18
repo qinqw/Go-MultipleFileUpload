@@ -45,7 +45,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 				return
 			}
 			//create destination file making sure the path is writeable.
-			dst, err := os.Create("/home/sanat/" + files[i].Filename)
+			dst, err := os.Create("/tmp/upload/" + files[i].Filename)
 			defer dst.Close()
 			if err != nil {
 				http.Error(w, err.Error(), http.StatusInternalServerError)
